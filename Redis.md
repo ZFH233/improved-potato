@@ -1,5 +1,7 @@
-## Redis
-	### Redis常用命令
+#Redis
+
+    Redis常用命令
+    ------------
 		select sql_name
 		选择数据库sql_name
 		dbsize
@@ -36,10 +38,10 @@
 		
 
 
+#Redis数据类型：string,hash,list,set,zset
 
-	## Redis数据类型：string,hash,list,set,zset
-
-	### string
+	string
+    ------
 		set name hejun
 		设置key的value值，可以覆盖value值
 		setnx
@@ -84,8 +86,9 @@
 				junhey@junhey.com
 		strlen
 			取指定key的value值的长度
-			
-	### hash类型
+            
+	hash类型
+    --------
 		hset 
 			hest 表名称 表字段 表的值
 			hest user:001 name junhey
@@ -109,10 +112,25 @@
 			返回hash的所有value
 		hgetall
 			返回hash的所有field和value
-			
-	### list类型
+            
+	列表list类型
+    -------
+        del mykey
+            删除键mykey
+        lpush mykey a b c d
+            mykey键并不存在，该命令会创建该键及与其关联的List，之后在将参数中的values从左到右依次插入
+        lrange mykey 0 2
+            取从位置0开始到位置2结束的3个元素
+        lrange mykey 0 -1
+            取链表中的全部元素，其中0表示第一个元素，-1表示最后一个元素
+        lpush mykey a b c d
+        lpop mykey
+        lpop mykey
+            在执行lpop命令两次后，链表头部的两个元素已经被弹出，此时链表中元素的数量是2
+            
 	
-	### set类型
+	set类型
+    -------
 		set是集合，是string类型的无序集合，集合可以取交集，并集，差值
 		sadd
 			向名称为key的set中添加元素
@@ -144,7 +162,8 @@
 			随机返回名称为key的set的一个元素但不删除元素
 		
 			
-	### zset类型
+	zset类型
+    -------
 		有序的set
 		zadd
 			向名称为key的zset中添加元素
