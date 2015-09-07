@@ -15,11 +15,7 @@
 #PHP
 
 - eclipse采用xml格式化文件,可以使每个人的代码格式规格都一样
-- //pc.local/bootstrap/js/bootstrap.min.js
-  echo base_url('bootstrap/js/bootstrap.min.js'); 
-  //pc.local/login.htm（设置了index_page='' url_suffix='.htm'）
-  echo site_url('login'); 
-  base_url() 用来创建静态资源的地址，如JS、CSS等地址需要用该函数来生成。site_url() 用来创建跟控制器地址相关的URL
+- base_url() 用来创建静态资源的地址，如JS、CSS等地址需要用该函数来生成。site_url() 用来创建跟控制器地址相关的URL
 - 调试开启：$this->output->enable_profiler(TRUE);
 - 对于用户操作进行log日志处理。
 
