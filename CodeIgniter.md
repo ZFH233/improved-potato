@@ -54,10 +54,76 @@
     M--模型，模型就是一个数据库类，一个模型对应一张表。
     V--视图，视图就是呈现出来的页面。
     C--控制器，用来操作视图的，相当于中介者，控制器把从M(模型)数据库中取出数据，再交给V(视图)呈现出来。
+
+## C  
+  控制器的创建位置：appcation/controllers/ 目录下
+  控制器的命名规范： [详见PHP的命名规范](http://www.junhey.com/archives/135/)
+  控制器文件的分目录管理  
+  方法的命名规范：1、不能以list命名 2、方法名与类名不同名
+  方法中如何获取GET方式提交过来的数据
+  如:$username = $this->input->get_post('username', true);//获取post或get方式提交过来的数据  
+  方法中如何获取POST方式提交过来的数据
+  如:$username = $this->input->post('username', true);$username = $this->input-get_post('username', true);  
+      
+## V  
+  视图的创建位置：appcation/views/ 目录下  
+  视图的命名规范：login_view.php   login.html  
+  如何在控制器中载入视图模板文件:$this->load->view("login"); $this->load->view("login.html");  
+  如何在控制器中给视图模板文件传递数据:$this->load->view("login.html",$data);//extract函数  
+  视图模板文件的分目录管理：$this->load->view("admin/category/addcategory.html");  
   
+## M  
+  模型的创建位置：application/models 目录下  
+  模型的命名规范：不区分大小写，建议表名和功能类似  
+  如何在控制器中载入模型（自动加载和手动加载）：$this->load->model("user_model");  
+  模型文件的分目录管理:$this->load->model("admin/user_model");  
+  
+## codeigniter框架中如何扩展控制器、模型  
+  基控制器的扩展:class Common extends CI_Controller{}  
+  基模型的扩展:class Model extends CI_Model{}   
+  
+## codeigniter框架中辅助函数  
+  辅助函数的位置：application/helpers 目录 或 system/helpers 目录  
+  如何在控制器中载入辅助函数：$this->load->helper("url");//载入url_helper.php文件  
+  自定义辅助函数  
+  辅助函数的扩展  
+  辅助函数的载入机制：首先考虑载入application/helpers 目录下的文件，再考虑载入system/helpers 目录下的文件  
+  页面的跳转：header("location:".site_url("admin/login/"));//创建一个url，并跳转
+  
+## codeigniter框架中的配置文件  
+  配置文件的位置：application/config/ 目录下  
+  如何在CI项目的控制器中载入配置文件（手动载入和自动载入）：$this->config->load("pagination");  
+  如何自定义配置文件：application/config/pagination.php    配置项变量名必须是 $config['配置项']  
+  配置文件中配置项的命名规范：$config['配置项']  
+  如何动态给配置项设置值：$this->config->set_item("配置项","配置项值");  
+  如何将分页配置写到配置文件中  
+  如何将配置文件合并：$this->config->load("pagination",true);//参数2：true
+  
+## codeigniter框架中的通用类库  
+  通用类库的位置：application/libraries/ 目录 system/libraries/ 目录  
+  如何在ci项目的控制器中载入通用类库：$this->load->library("upload");//文件上传类库的载入  
+  通用类库的载入机制：优先考虑载入application/libraries/ 目录下类库，其次考虑载入 system/libraries 目录下类库  
+  分页类库的载入（定制分页风格）:$this->load->library("pagination");  
+  列表页分页功能的完成
+  
+### 显示最后一条查询的sql语句：主要用于在连贯操作时，检测拼接的sql语句是否正确
+``` php 
+ echo $this->db->last_query();//如:select * from pt_users where uid>10 order by datetime desc limit 0,10
+```
+### 缓存驱动的加载方式  
+``` php
+    $this->load->driver('cache', array('adapter' => 'memcached'));//加载缓存驱动或缓存适配器,当前为memcached缓存;注意:CI框架只支持memcached,不支持memcache,windows操作系统下只有memcache扩展 
+    $this->load->driver('cache', array('adapter' => 'file'));//加载缓存驱动或缓存适配器,当前为file缓存 
+    $this->load->driver('cache', array('adapter' => 'redis'));//加载缓存驱动或缓存适配器,当前为redis缓存  
+    $this->load->driver('cache', array('adapter' => 'apc', 'backup' =>'file'));//优先选择apc缓存,file文件缓存作为替代方案;如果服务器不支持apc缓存时,选择file文件缓存
+```
+
+
+
+
 > 访问：localhost/项目文件名/入口文件(index.php)/控制器名/控制器中的方法名
 
-> CI框架通用Model类封装
+# CI框架通用Model类封装
 
 ``` php
 <?php defined('BASEPATH') or exit('No direct script access allowed');
@@ -227,6 +293,3 @@ class MY_Model extends CI_Model
 	}
 }
 ```
-  
-  
-
