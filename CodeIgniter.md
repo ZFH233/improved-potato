@@ -123,6 +123,10 @@
 
 > 访问：localhost/项目文件名/入口文件(index.php)/控制器名/控制器中的方法名
 
+#### 调试开启：$this->output->enable_profiler(TRUE);
+
+#### base_url() 用来创建静态资源的地址，如JS、CSS等地址需要用该函数来生成。site_url() 用来创建跟控制器地址相关的URL
+
 # CI框架通用Model类封装
 
 ``` php
