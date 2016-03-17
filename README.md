@@ -7,8 +7,23 @@
 
 > 先学会使用git，然后注册github，熟悉gitflow的工作流程
 
-参考[git-guide](http://www.bootcss.com/p/git-guide/)
-	[Git 简单使用说明](http://markyun.github.io/2015/instruction-Git/)
+[git](https://git-scm.com/)官网
+
+
+git下载之后可以参考：
+
+[git-guide](http://www.bootcss.com/p/git-guide/)
+
+[Git 简单使用说明](http://markyun.github.io/2015/instruction-Git/)
+
+
+[github](https://github.com)官网
+
+注册github之后怎么用可以参考：
+
+[github使用](https://www.zhihu.com/question/20070065)
+
+
 	
 
 
