@@ -47,7 +47,7 @@ JavaScript来说太广了，这个学习需要循循渐进。
 
 想接触后端，可以选择PHP和Node，建议JavaScript学的还好的可以选择Node，当然可以选择PHP，毕竟PHP是世界上最好的语言（[不要打我](https://www.zhihu.com/question/26498147)）
 不管是Node还是PHP都需要有一种后端思维，熟悉HTTP协议，请求响应，API接口怎么做到等等
-最近很火的[MEAN](http://mean.io/)（[M](MongoDb)[E](Express)[A](Angular)[N](Node)）可以学下。
+最近很火的[MEAN](http://mean.io/)（[M](https://www.mongodb.org/)    [E](http://expressjs.com/)    [A](https://angularjs.org/)     [N](https://nodejs.org)）可以学下。
 ![image](https://github.com/junhey/studyNotes/blob/master/images/mean.png)
 不知道是什么谷歌会告诉你。其实这里告诉你一个学习的秘密---搜索是最好的老师
 
