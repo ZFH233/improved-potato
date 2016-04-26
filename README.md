@@ -80,7 +80,10 @@ JavaScript来说太广了，这个学习需要循循渐进。
 不管是Node还是PHP都需要有一种后端思维，熟悉HTTP协议，请求响应，API接口怎么做到等等
 
 
-最近很火的[MEAN](http://mean.io/)（[M](https://www.mongodb.org/)    [E](http://expressjs.com/)    [A](https://angularjs.org/)     [N](https://nodejs.org)）可以学下。
+最近很火的[MEAN](http://mean.io/)（[M](https://www.mongodb.org/)    [E](http://expressjs.com/)    [A](https://angularjs.org/)     [N](https://nodejs.org)）可以学下。(M)ongoDB——noSQL的文档数据库，使用JSON风格来存储数据，甚至也是使用JS来进行sql查询；(E)xpress——基于Node的Web开发框架；(A)agular——JS的前端开发框架，提供了声明式的双向数据绑定；(N)ode——基于V8的运行时环境（JS语言开发），可以构建快速响应、可扩展的网络应用。这里给参考几篇文章:
+
+- [http://raohuaming.github.io/blog/2014/02/09/full-stack-javascript-with-mean-and-yeoman/](http://raohuaming.github.io/blog/2014/02/09/full-stack-javascript-with-mean-and-yeoman/)
+- [https://www.ibm.com/developerworks/cn/web/wa-mean1/](https://www.ibm.com/developerworks/cn/web/wa-mean1/)
 
 ![image](https://github.com/junhey/studyNotes/blob/master/images/mean.png)
 
